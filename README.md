@@ -2,16 +2,27 @@ EGKD: Efficient Graph Knowledge Distillation for Key Node Identification
 This repository provides a reproducible implementation of EGKD, a teacher-student graph knowledge distillation framework for node influence prediction and key node identification in complex networks.
 The current release contains three benchmark datasets and their precomputed SIR influence labels under the 1.25× epidemic threshold setting.
 1. Project Structure
+   
 EGKD/
+
 ├── My_EGKD_main.py
+
 ├── utils_data.py
+
 ├── cora.txt
+
 ├── cora_beta_1.25_sir_scores.pkl
+
 ├── powergrid.txt
+
 ├── powergrid_beta_1.25_sir_scores.pkl
+
 ├── Chicago.txt
+
 ├── Chicago_beta_1.25_sir_scores.pkl
+
 └── README.md
+
 2. Method Overview
 EGKD is designed for label-efficient node influence prediction. The main workflow contains:
 Topological feature construction
@@ -43,6 +54,7 @@ The SIR label file is a Python pickle file containing a dictionary:
     node_id: sir_influence_score
 }
 where sir_influence_score is the average final infection size obtained by repeated SIR simulations with each node used as the single initial infected seed.
+
 4. Environment Requirements
 Recommended environment:
 Python >= 3.8
@@ -55,6 +67,7 @@ tqdm
 Install dependencies:
 pip install torch numpy scipy networkx scikit-learn tqdm
 If CUDA is available, the script will use GPU automatically.
+
 5. Reproducing Experiments
 Run the main script:
 python My_EGKD_main.py
